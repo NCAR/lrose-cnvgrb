@@ -25,13 +25,13 @@ set (SRCS
 
 # include directories
 
-include_directories (../g2lib-3.2.0)
-include_directories (../w3lib-2.2.0)
+include_directories (${CMAKE_CURRENT_BINARY_DIR}/../g2lib-3.2.0)
+include_directories (${CMAKE_CURRENT_BINARY_DIR}/../w3lib-2.2.0)
 
 # link directories
 
-link_directories (../g2lib-3.2.0)
-link_directories (../w3lib-2.2.0)
+link_directories (${CMAKE_CURRENT_BINARY_DIR}/../g2lib-3.2.0)
+link_directories (${CMAKE_CURRENT_BINARY_DIR}/../w3lib-2.2.0)
 link_directories(${CMAKE_INSTALL_PREFIX}/lib)
 
 # link libs
@@ -43,8 +43,6 @@ link_libraries (png)
 link_libraries (z)
 
 add_executable (${PROJECT_NAME} ${SRCS})
-set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE FORTRAN)
-set(CMAKE_FORTRAN_LINK_EXECUTABLE ${PROJECT_NAME})
 
 # install
 

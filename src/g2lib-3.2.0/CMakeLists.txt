@@ -73,8 +73,9 @@ set (SRCS
   specunpack.f
   )
 
-add_library (${PROJECT_NAME} STATIC ${SRCS})
-set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE C)
+set(CMAKE_Fortran_FLAGS "-fno-range-check")
+
+add_library (${PROJECT_NAME} ${SRCS})
 
 INSTALL(TARGETS ${PROJECT_NAME}
         DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
