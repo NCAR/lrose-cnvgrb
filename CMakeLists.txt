@@ -27,6 +27,7 @@ message("CMAKE_INSTALL_PREFIX is ${CMAKE_INSTALL_PREFIX}")
 
 enable_testing()
 enable_language(Fortran)
+enable_language(C)
 
 # Set RPATH so that executable finds libraries
 # without needing LD_LIBRARY_PATH

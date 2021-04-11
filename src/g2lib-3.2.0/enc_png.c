@@ -16,6 +16,8 @@
    #define SUB_NAME ENC_PNG
 #elif defined LINUXG95
    #define SUB_NAME enc_png__
+#elif defined __linux__
+   #define SUB_NAME enc_png_
 #elif defined HP || defined AIX
    #define SUB_NAME enc_png
 #elif defined SGI || defined LINUX || defined VPP5000 || defined APPLE

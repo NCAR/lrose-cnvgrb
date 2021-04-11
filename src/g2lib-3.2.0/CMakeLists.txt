@@ -42,7 +42,6 @@ set (SRCS
   gf_unpack5.f
   gf_unpack6.f
   gf_unpack7.f
-  grib2.doc
   gribcreate.f
   gribend.f
   gribinfo.f
@@ -52,7 +51,6 @@ set (SRCS
   ixgb2.f
   jpcpack.f
   jpcunpack.f
-  makefile
   misspack.f
   mkieee.f
   mova2i.c

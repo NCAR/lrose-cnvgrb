@@ -34,32 +34,28 @@ C   MACHINE:  IBM SP
 C
 C$$$i*/
 
-#ifdef CRAY90
+#if defined CRAY90
    #include <fortran.h>
    int MOVA2I(unsigned char *a)
-#endif
-#ifdef HP
+#elif defined HP
    int mova2i(unsigned char *a)
-#endif
-#ifdef SGI
+#elif defined SGI
    int mova2i_(unsigned char *a)
-#endif
-#ifdef LINUX
+#elif defined __linux__
    int mova2i_(unsigned char *a)
-#endif
-#ifdef APPLE
+#elif defined LINUX
    int mova2i_(unsigned char *a)
-#endif
-#ifdef LINUXF90
+#elif defined LINUXF90
    int MOVA2I(unsigned char *a)
-#endif
-#ifdef VPP5000
+#elif defined LINUXG95
+   int mova2i__(unsigned char *a)
+#elif defined APPLE
+   int mova2i__(unsigned char *a)
+#elif defined VPP5000
    int mova2i_(unsigned char *a)
-#endif
-#ifdef IBM4
+#elif defined IBM4
    int mova2i(unsigned char *a)
-#endif
-#ifdef IBM8
+#elif defined IBM8
    long long int mova2i(unsigned char *a)
 #endif
 

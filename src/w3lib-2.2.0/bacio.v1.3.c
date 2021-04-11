@@ -73,7 +73,7 @@
 /* What is going on here is that although the Fortran caller will always */
 /*   be calling bacio, the called C routine name will change from system */
 /*   to system. */
-#ifdef CRAY90
+#if defined CRAY90
   #include <fortran.h>
   int BACIO
          (int * mode, int * start, int *newpos, int * size, int * no, 
@@ -81,44 +81,42 @@
           _fcd fcd_fname, _fcd fcd_datary) { 
   char *fname, *datary;
   int namelen;
-#endif
-#ifdef HP
+#elif defined HP
   int bacio
          (int * mode, int * start, int *newpos, int * size, int * no, 
           int * nactual, int * fdes, const char *fname, char *datary, 
           int  namelen, int  datanamelen) {
-#endif
-#ifdef SGI
+#elif defined SGI
   int bacio_
          (int * mode, int * start, int *newpos, int * size, int * no, 
           int * nactual, int * fdes, const char *fname, char *datary, 
           int  namelen, int  datanamelen) {
-#endif
-#ifdef LINUX
+#elif defined __linux__
   int bacio_
          (int * mode, int * start, int *newpos, int * size, int * no, 
           int * nactual, int * fdes, const char *fname, char *datary, 
           int  namelen, int  datanamelen) {
-#endif
-#ifdef LINUXF90
+#elif defined LINUX
+  int bacio_
+         (int * mode, int * start, int *newpos, int * size, int * no, 
+          int * nactual, int * fdes, const char *fname, char *datary, 
+          int  namelen, int  datanamelen) {
+#elif defined LINUXF90
   int BACIO
          (int * mode, int * start, int *newpos, int * size, int * no, 
           int * nactual, int * fdes, const char *fname, char *datary, 
           int  namelen, int  datanamelen) {
-#endif
-#ifdef VPP5000
+#elif defined VPP5000
   int bacio_
          (int * mode, int * start, int *newpos, int * size, int * no, 
           int * nactual, int * fdes, const char *fname, char *datary, 
           int  namelen, int  datanamelen) {
-#endif
-#ifdef IBM4
+#elif defined IBM4
   int bacio
          (int * mode, int * start, int *newpos, int * size, int * no, 
           int * nactual, int * fdes, const char *fname, char *datary, 
           int  namelen, int  datanamelen) {
-#endif
-#ifdef IBM8
+#elif defined IBM8
   long long int bacio
          (long long int * mode, long long int * start, long long int *newpos,
           long long int * size, long long int * no, 
@@ -362,51 +360,49 @@
     return 0;
   }
 } 
-#ifdef CRAY90
+#if defined CRAY90
   #include <fortran.h>
   int BANIO
          (int * mode, int * start, int *newpos, int * size, int * no, 
           int * nactual, int * fdes, _fcd fcd_fname, void *datary) { 
   char *fname;
   int namelen;
-#endif
-#ifdef HP
+#elif defined HP
   int banio
          (int * mode, int * start, int *newpos, int * size, int * no, 
           int * nactual, int * fdes, const char *fname, char *datary, 
           int  namelen ) {
-#endif
-#ifdef SGI
+#elif defined SGI
   int banio_
          (int * mode, int * start, int *newpos, int * size, int * no, 
           int * nactual, int * fdes, const char *fname, char *datary, 
           int  namelen ) {
-#endif
-#ifdef LINUX
+#elif defined __linux__
   int banio_
          (int * mode, int * start, int *newpos, int * size, int * no, 
           int * nactual, int * fdes, const char *fname, char *datary, 
           int  namelen ) {
-#endif
-#ifdef LINUXF90
+#elif defined LINUX
+  int banio_
+         (int * mode, int * start, int *newpos, int * size, int * no, 
+          int * nactual, int * fdes, const char *fname, char *datary, 
+          int  namelen ) {
+#elif defined LINUXF90
   int BANIO
          (int * mode, int * start, int *newpos, int * size, int * no, 
           int * nactual, int * fdes, const char *fname, char *datary, 
           int  namelen ) {
-#endif
-#ifdef VPP5000
+#elif defined VPP5000
   int banio_
          (int * mode, int * start, int *newpos, int * size, int * no, 
           int * nactual, int * fdes, const char *fname, char *datary, 
           int  namelen ) {
-#endif
-#ifdef IBM4
+#elif defined IBM4
   int banio
          (int * mode, int * start, int *newpos, int * size, int * no, 
           int * nactual, int * fdes, const char *fname, char *datary, 
           int  namelen ) {
-#endif
-#ifdef IBM8
+#elif defined IBM8
   long long int banio
          (long long int * mode, long long int * start, long long int *newpos,
           long long int * size, long long int * no, 
