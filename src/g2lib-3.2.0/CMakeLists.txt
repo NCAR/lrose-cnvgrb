@@ -73,6 +73,8 @@ set (SRCS
 
 set(CMAKE_Fortran_FLAGS "-fno-range-check")
 
+include_directories (${CMAKE_INSTALL_PREFIX}/include)
+
 add_library (${PROJECT_NAME} ${SRCS})
 
 INSTALL(TARGETS ${PROJECT_NAME}

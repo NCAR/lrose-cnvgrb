@@ -27,12 +27,13 @@ set (SRCS
 
 include_directories (${CMAKE_CURRENT_BINARY_DIR}/../g2lib-3.2.0)
 include_directories (${CMAKE_CURRENT_BINARY_DIR}/../w3lib-2.2.0)
+include_directories (${CMAKE_INSTALL_PREFIX}/include)
 
 # link directories
 
 link_directories (${CMAKE_CURRENT_BINARY_DIR}/../g2lib-3.2.0)
 link_directories (${CMAKE_CURRENT_BINARY_DIR}/../w3lib-2.2.0)
-link_directories(${CMAKE_INSTALL_PREFIX}/lib)
+link_directories (${CMAKE_INSTALL_PREFIX}/lib)
 
 # link libs
 
